@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refrence variable</title>
+</head>
+
+<body>
+    <script>
+        // let obj = {
+        //     name: 'mayank',
+        //     course: 'BCA'
+        // }
+        // let obj2 = {
+        //     name: 'mayank',
+        //     course: 'BCA'
+        // }
+        // console.log(obj == obj2)
+        // let userOne = {
+        //     name: 'Asabeneh',
+        //     role: 'teaching',
+        //     country: 'Finland'
+        // }
+
+        // let userTwo = {
+        //     name: 'Asabeneh',
+        //     role: 'teaching',
+        //     country: 'Finland'
+        // }
+
+        // console.log(userOne == userTwo)
+        // non primitve data has been changed due to refrence it value remain same  for example
+
+        let userOne = {
+            name: 'Asabeneh',
+            role: 'teaching',
+            country: 'Finland'
+        }
+        let userTwo = userOne;
+        console.log(userTwo == userOne)
+    </script>
+</body>
+
+</html>
