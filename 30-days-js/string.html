@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let string = 'Javascript'
+        console.log(string.substr(4, 6))
+        let country = 'Finland'
+        console.log(country.substr(3, 4))
+        let data = 'Mayank'
+        console.log(data.substring(3, 7))
+        console.log(data.split())
+        console.log(data.trim())
+        console.log(data.includes('May'))
+        console.log(data.replace('Mayank', 'Jay'))
+        let lastdata = data.length - 1;
+        console.log(data.charAt(lastdata))
+        let e1 = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon';
+        console.log(e1.split(', '))
+        console.log(parseInt('10') === 10)
+        console.log(Math.ceil(parseFloat('9.8')) == 10)
+        // console.log(Math.floor(Math.random() * 100))
+        const randomNum1 = Math.floor(Math.random() * (101 - 50) + 50);
+        console.log(randomNum1);
+        const sentence = 'You cannot end a sentence with because because because is a conjunction';
+
+        // Find the index of the first occurrence of 'because'
+        const indexOfFirstBecause = sentence.indexOf('because');
+
+        // Use substr to extract the desired substring
+        const slicedPhrase = sentence.substr(indexOfFirstBecause, 'because because because'.length);
+
+        console.log(slicedPhrase);
+    </script>
+</body>
+
+</html>
