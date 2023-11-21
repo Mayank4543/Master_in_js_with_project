@@ -1,0 +1,36 @@
+<script>
+    function isleapyear(year) {
+
+        return (year % 100 !== 0 && year % 4 === 0) || (year % 400 === 0)
+    }
+
+    let month = prompt('Enter month')
+    let year = prompt("Enter a year:");
+    month = month.toLowerCase()
+    let dayofmonth;
+    switch (month) {
+        case 'january':
+        case 'march':
+        case 'may':
+        case 'july':
+        case 'august':
+        case 'october':
+        case 'december':
+            dayofmonth = 31;
+            break;
+        case 'april':
+        case 'june':
+        case 'september':
+        case 'november':
+            dayofonth = 30;
+            break;
+        case 'february':
+            dayofmonth = isleapyear(parseInt(year)) ? 29 : 28;
+            break;
+        default:
+            dayofmonth = 'invalid mm'
+            break;
+    }
+    console.log(`${month.charAt(0).toUpperCase() + month.slice(1)}${year}year ${dayofmonth}days`)
+
+</script>
