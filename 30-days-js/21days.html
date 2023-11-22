@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript for Everyone:DOM</title>
+
+</head>
+<style>
+    #divcontainer {
+        width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    #green {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    #yellow {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .red1 {
+        width: 300px;
+        padding: 100px;
+        border: 1px solid #ccc;
+        text-align: center;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <!-- <p class="first">hiijkc</p>
+    <p class="second">hiijkcbcdh</p>
+    <p id="third">hiijkcbjkdcj</p> -->
+    <!-- <p>This is the first paragraph.</p>
+    <p>This is the second paragraph.</p>
+    <p>This is the third paragraph.</p>
+    <p>This is the fourth paragraph.</p> -->
+    <div class="wrapper">
+        <h1>Asabeneh Yetayeh challenges in <span id="year">2020</span> </h1>
+        <h2>30DaysOfJavaScript Challenge</h2>
+        <div id="divcontainer"></div>
+        <ul>
+            <li id="green">30DaysOfPython Challenge Done</li>
+            <li id="yellow">30DaysOfJavaScript Challenge Ongoing</li>
+            <li class="red1">30DaysOfReact Challenge Coming</li>
+            <!-- <li class="red">30DaysOfFullStack Challenge Coming</li>
+            <li class="red">30DaysOfDataAnalysis Challenge Coming</li>
+            <li class="red">30DaysOfReactNative Challenge Coming</li>
+            <li class="red">30DaysOfMachineLearning Challenge Coming</li> -->
+        </ul>
+    </div>
+    <script>
+        // let thirdpara = document.querySelector('#third')
+        // let title = document.querySelectorAll('p');
+        // title.forEach((element, index) => {
+        //     console.log(element.textContent);
+        // });
+        // // console.log(title);
+        // thirdpara.textContent = 'hi this is mayank';
+        // thirdpara.style.color = 'red';
+        // // console.log(thirdpara.textContent)
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     var paragraph = document.querySelectorAll('p');
+        //     paragraph.forEach(function (paragraph, index) {
+        //         paragraph.textContent = 'This is mayank' + (index + 1);
+        //         paragraph.classList.add('custom-class');
+
+        //         // Add additional styles if needed
+        //         paragraph.style.backgroundColor = 'lightgray';
+        //         paragraph.style.border = '2px solid black';
+        //         paragraph.style.fontSize = '16px';
+        //         paragraph.style.fontFamily = 'Arial, sans-serif';
+        //     })
+        // })
+        document.addEventListener('DOMContentLoaded', function () {
+            var yearElement = document.getElementById('year');
+            var dateelement = document.getElementById('divcontainer')
+            var green = document.getElementById('green');
+            var yellow = document.getElementById('yellow');
+            var red1 = document.getElementsByClassName('red1');
+            green.style.backgroundColor = 'green';
+            yellow.style.backgroundColor = 'yellow';
+            for (var i = 0; i < red1.length; i++) {
+                red1[i].style.backgroundColor = 'red';
+            }
+            // red1.style.backgroundColor = 'red';
+            function getrandomcolor() {
+                const col = ['red', 'green', 'yellow', 'blue', 'orange'];
+                let i = Math.floor(Math.random() * col.length);
+                return col[i];
+
+            }
+            function update() {
+                const date = new Date();
+                const formatedate = date.toLocaleString()
+                dateelement.textContent = formatedate
+                dateelement.style.backgroundColor = getrandomcolor();
+
+            }
+
+            function changedColor() {
+                yearElement.style.color = getrandomcolor();
+            }
+
+            setInterval(changedColor, 1000);
+            setInterval(update, 1000);
+        });
+
+        // console.log('January', date.getDate(), date.getFullYear(), date.getDate(), ":", date.getMinutes(), ":", date.getSeconds());
+
+    </script>
+</body>
+
+</html>

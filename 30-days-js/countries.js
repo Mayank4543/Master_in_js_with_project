@@ -3,4 +3,5 @@ const countries = [
   "Albania",
   "Algeria" /* ... other countries ... */,
 ];
+
 module.exports = countries;
