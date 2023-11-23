@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const constants = [2.72, 3.14, 9.81, 37, 100]
+        const countries = ['Finland', 'Estonia', 'Sweden', 'Denmark', 'Norway']
+        const rectangle = {
+            width: 20,
+            height: 10,
+            area: 200,
+            perimeter: 60
+        }
+        const users = [
+            {
+                name: 'John',
+                scores: 75,
+                skills: ['HTML', 'CSS', 'JS'],
+                age: 16
+            },
+            {
+                name: 'Alex',
+                scores: 80,
+                skills: ['HTM', 'CSS', 'JS'],
+                age: 18
+            },
+            {
+                name: 'David',
+                scores: 75,
+                skills: ['HTM', 'CSS'],
+                age: 22
+            },
+            {
+                name: 'John',
+                scores: 85,
+                skills: ['HTML'],
+                age: 25
+            },
+            {
+                name: 'Sara',
+                scores: 95,
+                skills: ['HTM', 'CSS', 'JS'],
+                age: 26
+            },
+            {
+                name: 'Martha',
+                scores: 80,
+                skills: ['HTM', 'CSS', 'JS'],
+                age: 18
+            },
+            {
+                name: 'Thomas',
+                scores: 90,
+                skills: ['HTM', 'CSS', 'JS'],
+                age: 20
+            }
+        ]
+        // Constants array
+        // let [e, pi, gravity, humanBodyTemp, waterBoliingpoint] = constants;
+        // console.log(e, pi, gravity, humanBodyTemp, waterBoliingpoint)
+        // let { width, height, area, perimeter } = rectangle
+        // console.log(width, height, area, perimeter)
+        for (const { name, scores, skills, age } of users) {
+            // console.log('Name:', name);
+
+            // console.log('Score:', scores);
+
+
+
+
+
+            // console.log('Skills:', skills);
+
+
+            // console.log('Age:', age);
+
+
+            if (skills && skills.length < 2) {
+                console.log(`${name} has less than two skills.`);
+            }
+
+            console.log('---');
+        }
+    </script>
+</body>
+
+</html>
