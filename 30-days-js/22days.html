@@ -11,50 +11,58 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        /* left: 12px; */
         width: 100vh;
         height: 600px;
-        background-color: aqua;
     }
 
     .hi {
-        margin-bottom: 400px;
+        margin-top: 1400px;
+        /* margin-bottom: 400px;ss */
     }
 
     .hello {
-        width: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .number-box {
+        width: 25%;
         height: 40px;
         background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5px;
+        color: white;
+        font-weight: bold;
     }
 </style>
 
 <body>
-    <!-- <script>
-        let title
-        for (let i = 0; i < 3; i++) {
-            title = document.createElement('h1')
-            title.className = 'title'
-            title.style.fontSize = '24px'
-            title.textContent = i
-            document.body.appendChild(title)
-        }
-    </script> -->
     <div class="container">
         <div class="hi">
             <h1>Number Generator</h1>
-            <h2>30DaysOfJavaScript Challenge</h2>\
-            <div class="hello">
-
-            </div>
+            <h2>30DaysOfJavaScript Challenge</h2>
+            <div class="hello" id="numberContainer"></div>
         </div>
-
-
-
-
     </div>
     <script>
-        const number = document.getElementsByClassName('container');
-        const number = document.getElementsByClassName('hello')
+        const numberContainer = document.getElementById('numberContainer');
+        const arr = ['Afghanistan', 'Africa', 'South Africa', 'Andoria', 'South Africa', 'Armenia', 'Australia'];
+        for (let i = 0; i <= 100; i++) {
+            const number = document.createElement('div');
+            number.className = 'number-box'
+            console.log(i)
+            number.textContent = i;
+            numberContainer.appendChild(number)
+        }
+        // for (let i = 0; i < arr.length; i++) {
+        //     const number = document.createElement('div');
+        //     number.className = 'number-box';
+        //     number.textContent = arr[i];
+        //     numberContainer.appendChild(number);
+        // }
     </script>
 </body>
 
