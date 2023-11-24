@@ -39,8 +39,8 @@
         resultObject.skills = skills;
         resultObject.jsScore = scores[0];
         resultObject.reactScore = scores[1];
-
-        return resultObject;
+        const students = { ...resultObject };
+        return students
     }
 
     // Example usage:
