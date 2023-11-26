@@ -1,0 +1,26 @@
+<script>
+    class Animal {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        makebow() {
+            console.log('this.bow')
+        }
+    }
+
+    class Dogs extends Animal {
+        constructor(name, age, breed) {
+            super(name, age, breed);
+            this.breed = breed;
+        }
+        makebow() {
+            console.log('this.bow2')
+        }
+
+    }
+    const dog = new Dogs('Anurag', 20, 'pomelion');
+    console.log(`${dog.name} is now ${dog.age} years old it is ${dog.breed}`)
+    dog.makebow();
+
+</script>
