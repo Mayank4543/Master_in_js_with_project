@@ -1,12 +1,13 @@
 <script>
-    class statistic {
+    class Statistics {
         constructor(data) {
             this.data = data;
         }
-        means() {
-            return this.data.reduce((acc, val) => acc + val, 0) / this.data.length;
 
+        mean() {
+            return this.data.reduce((acc, val) => acc + val, 0) / this.data.length;
         }
+
         median() {
             const sortedData = this.data.slice().sort((a, b) => a - b);
             const middle = Math.floor(sortedData.length / 2);
@@ -17,5 +18,90 @@
                 return sortedData[middle];
             }
         }
+
+        mode() {
+            const counts = {};
+            this.data.forEach((value) => {
+                counts[value] = (counts[value] || 0) + 1;
+            });
+
+            let modeValues = [];
+            let maxCount = 0;
+
+            for (const key in counts) {
+                if (counts[key] > maxCount) {
+                    maxCount = counts[key];
+                    modeValues = [key];
+                } else if (counts[key] === maxCount) {
+                    modeValues.push(key);
+                }
+            }
+
+            return modeValues.map((value) => Number(value));
+        }
+
+        range() {
+            return Math.max(...this.data) - Math.min(...this.data);
+        }
+
+        variance() {
+            const meanValue = this.mean();
+            return this.data.reduce((acc, val) => acc + Math.pow(val - meanValue, 2), 0) / this.data.length;
+        }
+
+        standardDeviation() {
+            return Math.sqrt(this.variance());
+        }
+
+        minimum() {
+            return Math.min(...this.data);
+        }
+
+        maximum() {
+            return Math.max(...this.data);
+        }
+
+        count() {
+            return this.data.length;
+        }
+
+        percentile(p) {
+            const sortedData = this.data.slice().sort((a, b) => a - b);
+            const index = Math.ceil((p / 100) * sortedData.length) - 1;
+            return sortedData[index];
+        }
+
+        frequencyDistribution() {
+            const counts = {};
+            this.data.forEach((value) => {
+                counts[value] = (counts[value] || 0) + 1;
+            });
+
+            const total = this.data.length;
+            const frequencyDistribution = {};
+
+            for (const key in counts) {
+                frequencyDistribution[key] = counts[key] / total;
+            }
+
+            return frequencyDistribution;
+        }
     }
+
+    // Example usage:
+    const dataSample = [1, 2, 2, 3, 4, 5, 5, 6, 6, 7];
+    const stats = new Statistics(dataSample);
+
+    console.log("Mean:", stats.mean());
+    console.log("Median:", stats.median());
+    console.log("Mode:", stats.mode());
+    console.log("Range:", stats.range());
+    console.log("Variance:", stats.variance());
+    console.log("Standard Deviation:", stats.standardDeviation());
+    console.log("Minimum:", stats.minimum());
+    console.log("Maximum:", stats.maximum());
+    console.log("Count:", stats.count());
+    console.log("Percentile (50th):", stats.percentile(50));
+    console.log("Frequency Distribution:", stats.frequencyDistribution());
+
 </script>
