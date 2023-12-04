@@ -1,83 +1,154 @@
 <script>
-    //     {
-    //         "users"[
-    //             {
-    //                 "firstName": "Asabeneh",
-    //                 "lastName": "Yetayeh",
-    //                 "age": 250,
-    //                 "email": "asab@asb.com"
-    //             },
-    //             {
-    //                 "firstName": "Alex",
-    //                 "lastName": "James",
-    //                 "age": 25,
-    //                 "email": "alex@alex.com"
-    //             },
-    //             {
-    //                 "firstName": "Lidiya",
-    //                 "lastName": "Tekle",
-    //                 "age": 28,
-    //                 "email": "lidiya@lidiya.com"
-    //             }
-    //         ]
-    //     }
-    //     const usersText = `{
-    // "users":[
-    //   {
-    //     "firstName":"Asabeneh",
-    //     "lastName":"Yetayeh",
-    //     "age":250,
-    //     "email":"asab@asb.com"
-    //   },
-    //   {
-    //     "firstName":"Alex",
-    //     "lastName":"James",
-    //     "age":25,
-    //     "email":"alex@alex.com"
-    //   },
-    //   {
-    //   "firstName":"Lidiya",
-    //   "lastName":"Tekle",
-    //   "age":28,
-    //   "email":"lidiya@lidiya.com"
-    //   }
-    // ]
-    // }`
+  //     {
+  //         "users"[
+  //             {
+  //                 "firstName": "Asabeneh",
+  //                 "lastName": "Yetayeh",
+  //                 "age": 250,
+  //                 "email": "asab@asb.com"
+  //             },
+  //             {
+  //                 "firstName": "Alex",
+  //                 "lastName": "James",
+  //                 "age": 25,
+  //                 "email": "alex@alex.com"
+  //             },
+  //             {
+  //                 "firstName": "Lidiya",
+  //                 "lastName": "Tekle",
+  //                 "age": 28,
+  //                 "email": "lidiya@lidiya.com"
+  //             }
+  //         ]
+  //     }
+  //     const usersText = `{
+  // "users":[
+  //   {
+  //     "firstName":"Asabeneh",
+  //     "lastName":"Yetayeh",
+  //     "age":250,
+  //     "email":"asab@asb.com"
+  //   },
+  //   {
+  //     "firstName":"Alex",
+  //     "lastName":"James",
+  //     "age":25,
+  //     "email":"alex@alex.com"
+  //   },
+  //   {
+  //   "firstName":"Lidiya",
+  //   "lastName":"Tekle",
+  //   "age":28,
+  //   "email":"lidiya@lidiya.com"
+  //   }
+  // ]
+  // }`
 
-    //     const usersObj = JSON.parse(usersText, (key, value) => {
-    //         let newValue =
-    //             typeof value == 'string' && key != 'email' ? value.toUpperCase() : value
-    //         return newValue
-    //     })
-    //     console.log(usersObj)
-    const usersText = `{
-"users":[
-  {
-    "firstName":"Asabeneh",
-    "lastName":"Yetayeh",
-    "age":250,
-    "email":"asab@asb.com"
+  //     const usersObj = JSON.parse(usersText, (key, value) => {
+  //         let newValue =
+  //             typeof value == 'string' && key != 'email' ? value.toUpperCase() : value
+  //         return newValue
+  //     })
+  //     console.log(usersObj)
+  //     const usersText = `{
+  // "users":[
+  //   {
+  //     "firstName":"Asabeneh",
+  //     "lastName":"Yetayeh",
+  //     "age":250,
+  //     "email":"asab@asb.com"
+  //   },
+  //   {
+  //     "firstName":"Alex",
+  //     "lastName":"James",
+  //     "age":25,
+  //     "email":"alex@alex.com"
+  //   },
+  //   {
+  //   "firstName":"Lidiya",
+  //   "lastName":"Tekle",
+  //   "age":28,
+  //   "email":"lidiya@lidiya.com"
+  //   }
+  // ]
+  // }`
+  //     // const usersObj = JSON.parse(usersText, undefined, 4)
+  //     // console.log(usersObj)
+  //     const usersObj = JSON.parse(usersText, (key, value) => {
+  //         let newValue =
+  //             typeof value == 'string' && key != 'email' ? value.toUpperCase() : value
+  //         return newValue
+  //     })
+  //     console.log(usersObj)
+  // const skills = ['HTML', 'CSS', 'JS', 'React', 'Node', 'Python']
+  // const data = JSON.stringify(skills)
+  // console.log(data)
+  // let age = 250;
+  // const data1 = JSON.stringify(age)
+  // const student = {
+  //   firstName: 'Asabeneh',
+  //   lastName: 'Yetayehe',
+  //   age: 250,
+  //   isMarried: true,
+  //   skills: ['HTML', 'CSS', 'JS', 'React', 'Node', 'Python',]
+  // }
+  // const data = JSON.stringify(student, ["firstname", "lastname", age, "skills"], 4)
+  // let userWithMostSkills = null;
+  //   let maxSkillsCount = 0;
+
+  //   for (const username in data) {
+  //     const skillsCount = data[username].skills.length;
+  //     if (skillsCount > maxSkillsCount) {
+  //       maxSkillsCount = skillsCount;
+  //       userWithMostSkills = username;
+  //     }
+  //   }
+
+  // console.log(`User with the most skills: ${userWithMostSkills}`);
+
+  const userdata = `{
+  "Mayank": {
+  "emails": "mayank@gmail.com",
+  "skills": ["HTML", "CSS", "js"],
+  "age": 21
+  },"KAshyap": {
+  "emails": "anu@gmail.com",
+  "skills": ["HTML", "CSS", "js","MongoDB"],
+  "age": 21
+  },"Kumar": {
+  "emails": "mayank@gmail.com",
+  "skills": ["HTML", "CSS", "js"],
+  "age": 21
   },
-  {
-    "firstName":"Alex",
-    "lastName":"James",
-    "age":25,
-    "email":"alex@alex.com"
-  },
-  {
-  "firstName":"Lidiya",
-  "lastName":"Tekle",
-  "age":28,
-  "email":"lidiya@lidiya.com"
+  "Vinod": {
+  "emails": "vinod@gmail.com",
+  "skills": ["HTML", "CSS", "js","React","Node"],
+  "age": 21
   }
-]
+  
+
 }`
-    // const usersObj = JSON.parse(usersText, undefined, 4)
-    // console.log(usersObj)
-    const usersObj = JSON.parse(usersText, (key, value) => {
-        let newValue =
-            typeof value == 'string' && key != 'email' ? value.toUpperCase() : value
-        return newValue
-    })
-    console.log(usersObj)
+
+  const data = JSON.parse(userdata, (key, value) => {
+    let newValue =
+      typeof value == 'string' && key == 'skills' ? value.toUpperCase() : value
+
+    return newValue
+
+  })
+  let Usernamewithmostskill = null
+  let maxSkillsCount = 0;
+  for (const item in data) {
+
+    const Skills = data[item].skills.length
+    if (Skills > maxSkillsCount) {
+      maxSkillsCount = Skills;
+      Usernamewithmostskill = item
+
+    }
+  }
+  console.log(`The username of json object is ${Usernamewithmostskill}`)
+
+  // console.log(data)
+
 </script>
