@@ -1,5 +1,78 @@
 <script>
     // middle ware ek function hainjo harek route se phele chlta hainjo
 
-    console.log("Starting")
+    // console.log("Starting")
+    // localStorage.setItem('first_name', 'Mayank', 'last_name', 'Rathore', 'age', '21', 'country', 'India', 'city', 'Gwalior');
+    // localStorage.setItem('last_name', 'rathore')
+    // localStorage.getItem('first_name');
+    // localStorage.getItem('last_name');
+    // const obj = {
+    //     name: "mayank",
+    //     age: 21
+    // }
+    // const ss = JSON.stringify(obj);
+    // // console.log(ss)
+    // localStorage.setItem(ss, 'ss')
+    // localStorage.getItem(ss)
+    const obj = {
+        firs_name: "mayank",
+        last_name: "Rathore",
+        income: {},
+        expense: {},
+        addincome: function (description, amount) {
+            obj.income[description] = amount
+        },
+        addExpense: function (description, amount) {
+            obj.expense[description] = amount
+        },
+        gettotalincome: function () {
+
+            let totalincome = 0;
+            for (let income in obj.income) {
+                totalincome += obj.income[income]
+
+            }
+            return totalincome;
+        },
+        gettotalexpense: function () {
+
+            let totalexpense = 0;
+            for (let expense in obj.expense) {
+                totalexpense += obj.expense[expense]
+
+            }
+            return totalexpense;
+        },
+        balance: function () {
+
+            let totalincome = 0;
+            for (let income in obj.income) {
+                totalincome += obj.income[income]
+
+            }
+
+            let totalexpense = 0;
+            for (let expense in obj.expense) {
+                totalexpense += obj.expense[expense]
+
+            }
+            let balance;
+            return balance = totalincome - totalexpense;
+        }
+
+    }
+    obj.addincome("salary", 40000)
+
+    obj.addExpenses("Guitar", 2000)
+    obj.addExpenses("Keyword", 1000)
+    let balance = obj.balance();
+    let totalIncome = obj.gettotalincome();
+    let totalExpense = obj.gettotalexpense();
+    console.log('TOTAL-INCOME:', totalIncome);
+    console.log('TOTAL-EXPENSEE:', totalExpense);
+    console.log('BALANCE:', balance);
+    console.log(obj);
+
+
+
 </script>
