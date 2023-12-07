@@ -1,11 +1,32 @@
 <script>
-    const countriesAPI = 'https://restcountries.com/v2/all'
-    const catsAPI = 'https://api.thecatapi.com/v1/breeds'
+    // const countriesAPI = 'https://restcountries.com/v2/all'
+    // const catsAPI = 'https://api.thecatapi.com/v1/breeds'
 
-    fetch(countriesAPI)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
+    // fetch(countriesAPI)
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log(data)
+    //     })
+    //     .catch(error => console.error(error))
+    const promise = new Promise((resolve, reject) => {
+        resolve('success')
+        reject('failure')
+    })
+    // Promise
+    const doPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const skills = ['HTML', 'CSS', 'JS']
+            if (skills.length > 0) {
+                resolve(skills)
+            } else {
+                reject('Something wrong has happened')
+            }
+        }, 2000)
+    })
+
+    doPromise
+        .then(result => {
+            console.log(result)
         })
-        .catch(error => console.error(error))
+        .catch(error => console.log(error))
 </script>
