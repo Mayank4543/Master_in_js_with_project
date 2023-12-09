@@ -8,25 +8,83 @@
     //         console.log(data)
     //     })
     //     .catch(error => console.error(error))
-    const promise = new Promise((resolve, reject) => {
-        resolve('success')
-        reject('failure')
-    })
-    // Promise
-    const doPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const skills = ['HTML', 'CSS', 'JS']
-            if (skills.length > 0) {
-                resolve(skills)
-            } else {
-                reject('Something wrong has happened')
-            }
-        }, 2000)
-    })
+    // const promise = new Promise((resolve, reject) => {
+    //     resolve('success')
+    //     reject('failure')
+    // })
+    // // Promise
+    // const doPromise = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         const skills = ['HTML', 'CSS', 'JS']
+    //         if (skills.length > 0) {
+    //             resolve(skills)
+    //         } else {
+    //             reject('Something wrong has happened')
+    //         }
+    //     }, 2000)
+    // })
 
-    doPromise
-        .then(result => {
-            console.log(result)
+    // doPromise
+    //     .then(result => {
+    //         console.log(result)
+    //     })
+    //     .catch(error => console.log(error))
+
+    // const countriesAPI = 'https://restcountries.com/v2/all';
+
+    // // fetch(countriesAPI)
+    // //     .then(response => {
+    // //         if (!response.ok) {
+    // //             throw new Error(`HTTP error! Status: ${response.status}`);
+    // //         }
+    // //         return response.json();
+    // //     })
+    // //     .then(data => {
+    // //         // Process the data
+    // //         data.forEach(country => {
+    // //             console.log(`Country: ${country.name}`);
+    // //             console.log(`Capital: ${country.capital}`);
+    // //             console.log(`Languages: ${country.languages.map(lang => lang.name).join(', ')}`);
+    // //             console.log(`Population: ${country.population}`);
+    // //             console.log(`Area: ${country.area}`);
+    // //             console.log('------------------------');
+    // //         });
+    // //     })
+    //     .catch(error => {
+    //         console.error('Fetch error:', error);
+    //     });
+    const catsApi = 'https://api.thecatapi.com/v1/breeds'
+    fetch(catsApi).then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+
+        return response.json({
+            "message": "fetching cat name succes fully..."
         })
-        .catch(error => console.log(error))
+    }).then(data => {
+
+        const validCats = data.filter(cat => cat.weight && cat.weight.metric);
+
+        const totalWeight = validCats.reduce((sum, cat) => {
+
+            const [min, max] = cat.weight.metric.split(' - ').map(Number);
+            const averageWeight = (min + max) / 2;
+            return sum + averageWeight;
+        }, 0);
+
+        const averageWeight = totalWeight / validCats.length;
+
+        console.log(`Average Weight of Cats in Metric Units: ${averageWeight} kg`);
+        // data.forEach(cats => {
+        //     const we = `cat ${cats.weight}`
+        //     const avg = we.reduce((s, c) => s + parseInt(c.weight.length, [0]), 0)
+        //     const totalavearage = avg / weight.length;
+        //     console.log(totalavearage)
+        //     // console.log(`Cat name: ${cats.name}`)
+        // })
+    }).catch(error => {
+        console.error('Fetch error:', error);
+    });
+
 </script>
