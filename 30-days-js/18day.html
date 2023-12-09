@@ -30,61 +30,61 @@
     //     })
     //     .catch(error => console.log(error))
 
-    // const countriesAPI = 'https://restcountries.com/v2/all';
+    const countriesAPI = 'https://restcountries.com/v2/all';
 
-    // // fetch(countriesAPI)
-    // //     .then(response => {
-    // //         if (!response.ok) {
-    // //             throw new Error(`HTTP error! Status: ${response.status}`);
-    // //         }
-    // //         return response.json();
-    // //     })
-    // //     .then(data => {
-    // //         // Process the data
-    // //         data.forEach(country => {
-    // //             console.log(`Country: ${country.name}`);
-    // //             console.log(`Capital: ${country.capital}`);
-    // //             console.log(`Languages: ${country.languages.map(lang => lang.name).join(', ')}`);
-    // //             console.log(`Population: ${country.population}`);
-    // //             console.log(`Area: ${country.area}`);
-    // //             console.log('------------------------');
-    // //         });
-    // //     })
-    //     .catch(error => {
-    //         console.error('Fetch error:', error);
-    //     });
-    const catsApi = 'https://api.thecatapi.com/v1/breeds'
-    fetch(catsApi).then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
-
-        return response.json({
-            "message": "fetching cat name succes fully..."
+    fetch(countriesAPI)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
         })
-    }).then(data => {
+        .then(data => {
+            // Process the data
+            data.forEach(country => {
+                console.log(`Country: ${country.name}`);
+                // console.log(`Capital: ${country.capital}`);
+                // console.log(`Languages: ${country.languages.map(lang => lang.name).join(', ')}`);
+                // console.log(`Population: ${country.population}`);
+                // console.log(`Area: ${country.area}`);
+                // console.log('------------------------');
+            });
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
+    // const catsApi = 'https://api.thecatapi.com/v1/breeds'
+    // fetch(catsApi).then(response => {
+    //     if (!response.ok) {
+    //         throw new Error(`HTTP error: ${response.status}`);
+    //     }
 
-        const validCats = data.filter(cat => cat.weight && cat.weight.metric);
+    //     return response.json({
+    //         "message": "fetching cat name succes fully..."
+    //     })
+    // }).then(data => {
 
-        const totalWeight = validCats.reduce((sum, cat) => {
+    //     const validCats = data.filter(cat => cat.weight && cat.weight.metric);
 
-            const [min, max] = cat.weight.metric.split(' - ').map(Number);
-            const averageWeight = (min + max) / 2;
-            return sum + averageWeight;
-        }, 0);
+    //     const totalWeight = validCats.reduce((sum, cat) => {
+    //         // Assuming weight is in the format "min - max", e.g., "2 - 5"
+    //         const [min, max] = cat.weight.metric.split(' - ').map(Number);
+    //         const averageWeight = (min + max) / 2;
+    //         return sum + averageWeight;
+    //     }, 0);
 
-        const averageWeight = totalWeight / validCats.length;
+    //     const averageWeight = totalWeight / validCats.length;
 
-        console.log(`Average Weight of Cats in Metric Units: ${averageWeight} kg`);
-        // data.forEach(cats => {
-        //     const we = `cat ${cats.weight}`
-        //     const avg = we.reduce((s, c) => s + parseInt(c.weight.length, [0]), 0)
-        //     const totalavearage = avg / weight.length;
-        //     console.log(totalavearage)
-        //     // console.log(`Cat name: ${cats.name}`)
-        // })
-    }).catch(error => {
-        console.error('Fetch error:', error);
-    });
+    //     console.log(`Average Weight of Cats in Metric Units: ${averageWeight} kg`);
+    //     // data.forEach(cats => {
+    //     //     const we = `cat ${cats.weight}`
+    //     //     const avg = we.reduce((s, c) => s + parseInt(c.weight.length, [0]), 0)
+    //     //     const totalavearage = avg / weight.length;
+    //     //     console.log(totalavearage)
+    //     //     // console.log(`Cat name: ${cats.name}`)
+    //     // })
+    // }).catch(error => {
+    //     console.error('Fetch error:', error);
+    // });
 
 </script>
