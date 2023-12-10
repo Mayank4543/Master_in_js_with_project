@@ -6,6 +6,7 @@ const {
   deleteProduct,
   getProductDetails,
 } = require("../controller/productController");
+// const { isAuthenticatedUser } = require("../middleware/auth");
 const router = express.Router();
 
 router.route("/products").get(getAllProducts);

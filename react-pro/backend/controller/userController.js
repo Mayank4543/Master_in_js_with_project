@@ -1,12 +1,6 @@
 const User = require("../models/userModel");
 const sendToken = require("../utils/jwtToken");
-// exports.createUser = async (req, res, next) => {
-//   const user = await User.create(req.body);
-//   res.status(200).json({
-//     success: true,
-//     user,
-//   });
-// };
+
 exports.registerUser = async (req, res) => {
   const { name, email, password } = req.body;
   const user = await User.create({
@@ -42,3 +36,14 @@ exports.loginUser = async (req, res) => {
     });
   }
 };
+// exports.logoutUser = async (req, res, next) => {
+//   res.cookie("token", null, {
+//     expires: new Date(Date.now()),
+//     httpOnly: true,
+//   });
+
+//   res.status(200).json({
+//     success: true,
+//     message: "Logged Out",
+//   });
+// };
