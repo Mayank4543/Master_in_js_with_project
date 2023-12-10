@@ -1,5 +1,5 @@
 const User = require("../models/userModel");
-
+const sendToken = require("../utils/jwtToken");
 // exports.createUser = async (req, res, next) => {
 //   const user = await User.create(req.body);
 //   res.status(200).json({
@@ -18,11 +18,7 @@ exports.registerUser = async (req, res) => {
       url: "myCloud.secure_url",
     },
   });
-  const token = user.getJWTTOKEN();
-  res.status(200).json({
-    success: true,
-    token,
-  });
+  sendToken(user, 201, res);
 };
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -34,11 +30,13 @@ exports.loginUser = async (req, res) => {
     if (!user) {
       return new Error("invalid email or password");
     }
-    const ispasswordMatched = await user.comparepassword();
+    const ispasswordMatched = await user.comparepassword(password);
     if (!ispasswordMatched) {
       return new Error("invalid Password");
     }
-  } catch (e) {
+    sendToken(user, 200, res);
+  } catch (err) {
+    console.log(err);
     res.status(400).json({
       message: "something went wrong",
     });
