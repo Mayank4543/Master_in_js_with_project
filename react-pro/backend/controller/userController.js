@@ -1,6 +1,13 @@
 const User = require("../models/userModel");
 const sendToken = require("../utils/jwtToken");
 
+// exports.createUser = async (req, res, next) => {
+//   const user = await User.create(req.body);
+//   res.status(200).json({
+//     success: true,
+//     user,
+//   });
+// };
 exports.registerUser = async (req, res) => {
   const { name, email, password } = req.body;
   const user = await User.create({
@@ -14,36 +21,43 @@ exports.registerUser = async (req, res) => {
   });
   sendToken(user, 201, res);
 };
+
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
+
   try {
     if (!email || !password) {
-      return new Error("Please enter email and password");
+      throw new Error("Please enter email and password");
     }
+
     const user = await User.findOne({ email }).select("+password");
+
     if (!user) {
-      return new Error("invalid email or password");
+      throw new Error("Invalid email or password");
     }
-    const ispasswordMatched = await user.comparepassword(password);
-    if (!ispasswordMatched) {
-      return new Error("invalid Password");
+
+    const isPasswordMatched = await user.comparePassword(password);
+
+    if (!isPasswordMatched) {
+      throw new Error("Invalid password");
     }
+
     sendToken(user, 200, res);
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.error(error); // Log the error for debugging purposes
     res.status(400).json({
-      message: "something went wrong",
+      success: false,
+      message: error.message || "Something went wrong",
     });
   }
 };
-// exports.logoutUser = async (req, res, next) => {
-//   res.cookie("token", null, {
-//     expires: new Date(Date.now()),
-//     httpOnly: true,
-//   });
-
-//   res.status(200).json({
-//     success: true,
-//     message: "Logged Out",
-//   });
-// };
+// logout User
+exports.logout = async (req, res, next) => {
+  res.cookie("token", null, {
+    expires: new Date(Date.now()),
+  });
+  res.status(200).json({
+    success: true,
+    message: "Logout successfully",
+  });
+};
