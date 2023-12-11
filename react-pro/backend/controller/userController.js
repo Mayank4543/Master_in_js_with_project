@@ -1,13 +1,8 @@
 const User = require("../models/userModel");
 const sendToken = require("../utils/jwtToken");
+const sendEmail = require("../utils/sendEmail");
+const crypto = require("crypto");
 
-// exports.createUser = async (req, res, next) => {
-//   const user = await User.create(req.body);
-//   res.status(200).json({
-//     success: true,
-//     user,
-//   });
-// };
 exports.registerUser = async (req, res) => {
   const { name, email, password } = req.body;
   const user = await User.create({
@@ -60,4 +55,37 @@ exports.logout = async (req, res, next) => {
     success: true,
     message: "Logout successfully",
   });
+};
+
+exports.forgotPassword = async (req, res, next) => {
+  const user = await User.findOne({ email: req.body.email });
+  if (!user) {
+    return next(new Error("User not found"));
+  }
+  const resetToken = user.generatePasswordResetToken();
+  await user.save({ validateBeforeSave: false });
+
+  const resetPasswordUrl = `${req.protocol}://${req.get(
+    "host"
+  )}/password/reset/${resetToken}`;
+  const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email then, please ignore it.`;
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: `Ecommerce Password Recovery`,
+      message,
+    });
+
+    res.status(200).json({
+      success: true,
+      message: `Email sent to ${user.email} successfully`,
+    });
+  } catch (error) {
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save({ validateBeforeSave: false });
+
+    return next(new Error(error.message, 500));
+  }
 };
