@@ -1,5 +1,6 @@
+import Footer from "./components/layout/Footer"
 import Header from "./components/layout/Header"
-import SearchComponent from "./searc"
+
 // import WebFont from "webfontloader";
 
 
@@ -30,7 +31,7 @@ function App() {
           </div>
         </div>
       </div>
-
+      <Footer />
     </>
   )
 }

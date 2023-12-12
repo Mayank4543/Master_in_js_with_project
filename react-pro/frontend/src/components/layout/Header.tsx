@@ -14,31 +14,44 @@ const Header = () => {
                         /> */}
                     </div>
                     {/* search */}
-                    <div className="w-full max-w-xs xl:max-w-lg 2xl:max-w-2xl bg-gray-100 rounded-md hidden xl:flex items-center">
+                    <div className="w-full max-w-xs xl:max-w-lg 2xl:max-w-2xl  rounded-md hidden xl:flex items-center">
                         <select
-                            className="bg-transparent uppercase font-bold text-sm p-4 mr-4"
+                            className="bg-[#2874f0] text-white uppercase font-bold text-sm p-4 mr-4 rounded-md "
                             name=""
                             id=""
                         >
-                            <option>all categories</option>
+                            <option className="pr-4">all categories</option>
                         </select>
-                        <input type="text" className=" font-semibold pl-4" name="" id="" placeholder="I am searching..." />
-                        <svg
-                            className="ml-auto h-5 px-4 "
-                            aria-hidden="true"
-                            focusable="false"
-                            data-prefix="far"
-                            data-icon="search"
-                            role="img"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                        >
-                            <path
-                                fill=""
-                                d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"
-                            />
-                        </svg>
+
+
+                        <div className="rounded-full bg-white w-full px-4 py-4  -ml-4 flex items-center justify-center ">
+                            <input type="text" className=" font-semibold pl-4 outline-none" style={{ background: 'transparent' }} name="" id="" placeholder="" />
+                            <svg
+                                className="ml-auto h-5 px-4 "
+                                aria-hidden="true"
+                                focusable="false"
+                                data-prefix="far"
+                                data-icon="search"
+                                role="img"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                            >
+                                <path
+                                    fill=""
+                                    d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"
+                                />
+                            </svg>
+                        </div>
+
+
                     </div>
+
+
+
+
+
+
+
                     {/* phone number */}
                     <div className="ml-0  md:w-48 hidden rounded-md sm:flex flex-col place-items-end">
                         {/* <span className="font-bold md:text-xl">8 800 332 65-66</span>
