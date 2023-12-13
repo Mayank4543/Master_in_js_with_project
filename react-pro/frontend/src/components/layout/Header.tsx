@@ -1,17 +1,51 @@
+import { useState } from "react"
+import Login from "../auth/login"
 
 
 const Header = () => {
+    const [modelopen, setModelopen] = useState(false);
+
+    const handleSubmit = () => {
+        setModelopen(!modelopen);
+    };
+
     return (
         <>
             <header className="bg-[#2874f0]">
-                <div className="container mx-auto px-4 py-4 flex items-center">
+                <div className="container mx-auto px-4 py-3 flex items-center">
                     {/* logo */}
-                    <div className="mr-auto md:w-48 flex-shrink-0">
-                        {/* <img
-                            className="h-8 md:h-10"
-                            src="https://i.ibb.co/98pHdFq/2021-10-27-15h51-15.png"
-                            alt=""
-                        /> */}
+                    <div className="mr-auto md:w-48 flex-shrink-0 leading-3">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            version="1.1"
+                            viewBox="0 0 512.016 512.016"
+                            xmlSpace="preserve"
+                        >
+                            <path d="M145.544 151.36L105.184 31.92 0.68 31.92 0.68 0 128.096 0 175.784 141.136z"></path>
+                            <path
+                                fill="#FFD67F"
+                                d="M68.128 124.56L511.336 124.56 426.856 361.584 141.936 361.584z"
+                            ></path>
+                            <circle cx="377.128" cy="450.56" r="61.456"></circle>
+                            <circle cx="191.752" cy="450.56" r="61.456"></circle>
+                            <path
+                                fill="#FF583E"
+                                d="M322.288 308.816L195.832 180.656 322.288 52.496 443.632 52.496 316.968 180.656 443.632 308.816z"
+                            ></path>
+                        </svg>
+                        <h1 className="text-white text-lg font-bold font-sans ">Ecommerce</h1>
+                        {/* <h1 className="text-white text-md font-bold">Explore <span className="text-yellow-400">plus</span> </h1> */}
+                        {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGwEA2B12Docc525kwI_pDwR414o3YK_jPBVBCF6frj8z7Yg4Q4I8BYdPOdaEA0pZHWiE&usqp=CAU" alt="8984532 - Amazon Arrow Logo Vector@pngkey.com" style={{ background: 'transparent' }} />
+                        
+                        */}
+
+
+
+
+
                     </div>
                     {/* search */}
                     <div className="w-full max-w-xs xl:max-w-lg 2xl:max-w-2xl  rounded-md hidden xl:flex items-center">
@@ -54,11 +88,14 @@ const Header = () => {
 
                     {/* phone number */}
                     <div className="ml-0  md:w-48 hidden rounded-md sm:flex flex-col place-items-end">
-                        {/* <span className="font-bold md:text-xl">8 800 332 65-66</span>
-                        <span className="font-semibold text-sm text-gray-400">
-                            Support 24/7
-                        </span> */}
-                        <button type="submit" className=" font-medium cursor-pointer rounded  bg-[#fff] py-[10px] px-[40px]">Login</button>
+                        <button className="text-black bg-white font-medium rounded-lg text-sm px-5 py-2.5 " onClick={handleSubmit}    >Login</button>
+
+                        {
+
+                        }
+
+
+
                     </div>
                     {/* buttons */}
                     <nav className="contents">
@@ -136,6 +173,8 @@ const Header = () => {
                 </div>
                 <hr />
             </header>
+
+            {modelopen && <Login />}
         </>
     )
 }

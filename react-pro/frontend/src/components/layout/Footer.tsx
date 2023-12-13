@@ -3,7 +3,7 @@
 const Footer = () => {
     return (
         <>
-            <div className="bg-[#172337] bottom-0 mb-0 fixed  w-full">
+            <div className="bg-[#172337] bottom-0 mb-0   w-full">
                 <div className="max-w-screen-xl mx-auto px-4 sm:px-6   flex flex-wrap justify-center flex justify-between">
                     <div className="p-5">
                         <div className=" uppercase text-[#878787] mb-[9px] text-sm font-normal ">Home</div>
