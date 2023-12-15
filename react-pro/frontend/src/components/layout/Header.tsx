@@ -1,13 +1,11 @@
-import { useState } from "react"
-import Login from "../auth/login"
+// import { useState } from "react"
+// import Login from "../auth/login"
+
+// import { NavLink } from "react-router-dom"
 
 
 const Header = () => {
-    const [modelopen, setModelopen] = useState(false);
 
-    const handleSubmit = () => {
-        setModelopen(!modelopen);
-    };
 
     return (
         <>
@@ -37,10 +35,7 @@ const Header = () => {
                             ></path>
                         </svg>
                         <h1 className="text-white text-lg font-bold font-sans ">Ecommerce</h1>
-                        {/* <h1 className="text-white text-md font-bold">Explore <span className="text-yellow-400">plus</span> </h1> */}
-                        {/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGwEA2B12Docc525kwI_pDwR414o3YK_jPBVBCF6frj8z7Yg4Q4I8BYdPOdaEA0pZHWiE&usqp=CAU" alt="8984532 - Amazon Arrow Logo Vector@pngkey.com" style={{ background: 'transparent' }} />
-                        
-                        */}
+
 
 
 
@@ -86,9 +81,9 @@ const Header = () => {
 
 
 
-                    {/* phone number */}
+                    {/* Login */}
                     <div className="ml-0  md:w-48 hidden rounded-md sm:flex flex-col place-items-end">
-                        <button className="text-black bg-white font-medium rounded-lg text-sm px-5 py-2.5 " onClick={handleSubmit}    >Login</button>
+                        <button className="text-black bg-white font-medium rounded-lg text-sm px-5 py-2.5 "    >Login</button>
 
                         {
 
@@ -101,7 +96,7 @@ const Header = () => {
                     <nav className="contents">
                         <ul className="ml-4 xl:w-48 flex items-center justify-end">
                             <li className="ml-2 lg:ml-4 relative inline-block">
-                                <a className="" href="">
+                                <a href="">
                                     <svg
                                         className="h-9 lg:h-10 p-2 text-[#fff] text-sm font-medium"
                                         aria-hidden="true"
@@ -174,7 +169,6 @@ const Header = () => {
                 <hr />
             </header>
 
-            {modelopen && <Login />}
         </>
     )
 }
