@@ -22,6 +22,7 @@ exports.getAllProducts = async (req, res) => {
   res.status(200).json({
     success: true,
     products,
+    productCount,
   });
 };
 exports.getProductDetails = async (req, res, next) => {
