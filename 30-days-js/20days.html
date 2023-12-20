@@ -7,27 +7,37 @@
 
     // const PI = Math.PI
     // const gravity = 9.81
-    const showDateTime = () => {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = now.getMonth() + 1;
-        const date = now.getDate()
-        let hours = now.getHours();
-        let minutes = now.getMinutes();
-        if (hours < 10) {
-            hours = '0' + hours;
+    // const showDateTime = () => {
+    //     const now = new Date();
+    //     const year = now.getFullYear();
+    //     const month = now.getMonth() + 1;
+    //     const date = now.getDate()
+    //     let hours = now.getHours();
+    //     let minutes = now.getMinutes();
+    //     if (hours < 10) {
+    //         hours = '0' + hours;
 
-        }
+    //     }
 
-        if (minutes < 10) {
-            minutes = '0' + minutes;
-        }
-        const dateMonthYear = date + '.' + month + '.' + year
-        const time = hours + ':' + minutes;
-        const fullTime = dateMonthYear + '' + time;
-        return fullTime
+    //     if (minutes < 10) {
+    //         minutes = '0' + minutes;
+    //     }
+    //     const dateMonthYear = date + '.' + month + '.' + year
+    //     const time = hours + ':' + minutes;
+    //     const fullTime = dateMonthYear + '' + time;
+    //     return fullTime
 
+    // }
+    // console.log(showDateTime())
+    document.getElementsByTagName('tagname')
+    const allTitles = document.getElementsByTagName('h1')
+
+    console.log(allTitles) //HTMLCollections
+    console.log(allTitles.length) // 4
+
+    for (let i = 0; i < allTitles.length; i++) {
+        console.log(allTitles[i]) // prints each elements in the HTMLCollection
     }
-    console.log(showDateTime())
+
 
 </script>
