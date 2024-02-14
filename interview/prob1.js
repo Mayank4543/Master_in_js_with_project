@@ -24,15 +24,16 @@ function ispallindrome(str) {
   let end = lowercasstr.length - 1;
   while (start < end) {
     if (lowercasstr[start] !== lowercasstr[end]) {
-      console.log("This is not a pallindrome");
+      return "This is not a pallindrome";
     } else {
-      console.log("This is  a pallindrome");
+      return "This is  a pallindrome";
     }
     start++;
     end--;
   }
+  return -1;
 }
-// console.log(ispallindrome("lol"));
+console.log(ispallindrome("education"));
 function issorted(str) {
   var lowercasestr = str.toLowerCase();
   var charter = [];
@@ -40,7 +41,7 @@ function issorted(str) {
     charter[i] = lowercasestr[i];
   }
   for (var i = 0; i < charter.length; i++) {
-    for (var j = 0; j < charter.length - 1; j++) {
+    for (var j = 0; j < charter.length - i - 1; j++) {
       if (charter[j] > charter[j + 1]) {
         var temp = charter[j];
         charter[j] = charter[j + 1];
@@ -55,7 +56,7 @@ function issorted(str) {
   return stringsorted;
 }
 
-// console.log(issorted("Hello"));
+console.log(issorted("Mayank"));
 function isfirstelementcappital(str) {
   const isalloowed = str.split(" ").map(function (word) {
     return word.charAt(0).toUpperCase() + word.substring(1);
@@ -84,16 +85,16 @@ function occu(str) {
   }
   return { char: maxChar, maxcount: maxcount };
 }
-console.log(occu("hello"));
+console.log(occu("Mayank"));
 function noofoccurelements(str) {
-  var occurance = {};
-  str.split("").forEach(function (elem) {
-    if (occurance.hasOwnProperty(elem) === false) {
-      occurance[elem] = 1;
-    } else {
-      occurance[elem]++;
-    }
-  });
-  return occurance;
+  // var occurance = {};
+  // str.split("").forEach(function (elem) {
+  //   if (occurance.hasOwnProperty(elem) === false) {
+  //     occurance[elem] = 1;
+  //   } else {
+  //     occurance[elem]++;
+  //   }
+  // });
+  // return occurance;
 }
 // console.log(noofoccurelements("hello"));

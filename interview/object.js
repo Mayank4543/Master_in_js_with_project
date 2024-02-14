@@ -6,9 +6,9 @@ const obj = {
   rollno: "18",
 };
 delete obj.name;
-for (key in obj) {
-  console.log(obj[key]);
-}
+// for (key in obj) {
+//   console.log(obj[key]);
+// }
 // if you have two key first key as replace has but the key is in first postiion
 const obj2 = {
   a: "a",
@@ -48,15 +48,30 @@ let admin = {
   },
   ...user,
 };
-const {
-  firstname: { sdbsd },
-} = admin;
-console.log(sdbsd);
+// const {
+//   firstname: { sdbsd },
+// } = admin;
+console.log(admin);
 const value = { number: 10 };
 const multiplgfy = (x = { ...value }) => {
   console.log((x.number *= 2));
-};f
+};
 multiplgfy();
 multiplgfy();
 multiplgfy(value);
+
 multiplgfy(value);
+const obj6 = {
+  name: "aa",
+  age: 21,
+};
+const admin2 = {
+  username: "Mayank",
+  firstname: {
+    hi: "hey",
+    hello: "haa",
+  },
+  ...obj6,
+};
+const { username: Name } = admin2;
+console.log(Name);
