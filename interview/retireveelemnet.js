@@ -9,5 +9,7 @@ function retireve(arr, n) {
 }
 const arr = [1, 2, 456, 7, 54, 1];
 
+const rsult = arr[arr.length - 1];
+console.log(rsult);
 const value = retireve(arr, 2);
 console.log(value);

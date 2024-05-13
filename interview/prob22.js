@@ -53,7 +53,7 @@ function freq(arr) {
 }
 const arr = [1, 2, 3, 4, 5, 3, 5, 3, 5, 6, 43, 45, 3, 5, 35, 3, 5, 3];
 const value = freq(arr);
-// console.log(value);
+console.log(value);
 // function shuffle(shuffle) {
 //   const arr = shuffle.length;
 //   while (arr > 0) {

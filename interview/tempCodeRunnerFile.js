@@ -1,3 +1,3 @@
-for (let i = 0; i < originalarr.length; i++) {
-//   duplicatearr[duplicatearr.length] = originalarr[i];
-// }
+let data3 = ["anil", "radha", "peter"];
+delete data3["anil"];
+console.log(data3);

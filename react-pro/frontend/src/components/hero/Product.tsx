@@ -3,6 +3,9 @@
 
 
 
+
+
+
 interface ProductType {
     name?: string;
     image?: { url: string }[];
@@ -19,164 +22,209 @@ const Product: React.FC<ProductType> = ({ name = "mayank", image = [{ url: "data
     if (!name || !image || image.length === 0 || !price || !_id) {
         return <div>Product information is missing.</div>;
     }
-    // const Hero = () => {
+
     return (
         <>
             <section className="bg-white body-font">
-                <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-wrap sm:flex-ro -m-4">
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w- h-full block"
-                                    src={image[0].url}
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    The Catalyzer
-                                </h2>
-                                <p className="mt-1">{price}</p>
-                            </div>
-                        </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/421x261"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    {name}
-                                </h3>
+                <div className="  flex  items-center justify-center flex-wrap space-x-1">
+                    <div className="group my-10 flex w-full flex-col max-w-xs  overflow-hidden border border-gray-100 bg-white shadow-md">
+                        <a className="relative flex h-60 overflow-hidden" href="#">
+                            <img
+                                className=" object-fit  object-center w-full h-full"
+                                src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
+                                alt="product image"
+                            />
 
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    Shooting Stars
-                                </h2>
-                                <p className="mt-1">$21.15</p>
+                            <div className="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
+                                <button className="flex h-10 w-10 items-center rounded-full justify-center bg-green-900 text-white transition hover:bg-green-700">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-5 w-5"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
                             </div>
-                        </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/422x262"
-                                />
+                        </a>
+                        <div className="mt-4 px-5 pb-5">
+                            <a href="#">
+                                <h5 className="text-xl tracking-tight text-slate-900 hover:text-blue-500">
+                                    Lululemon Comfort Tee - White
+                                </h5>
                             </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    Neptune
-                                </h2>
-                                <p className="mt-1">$12.00</p>
+                            <div className="mt-2 mb-5 flex items-center justify-between">
+                                <p>
+                                    <span className="text-xl font-bold text-slate-900">$79</span>
+                                    <span className="text-sm text-slate-900 line-through">$99</span>
+                                </p>
                             </div>
+                            <button className="flex items-center justify-center rounded-xl bg-green-700 px-4 py-3 font-bold font-400 text-sm text-white transition  hover:bg-green-500">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="mr-2 h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                </svg>
+                                Add to cart
+                            </button>
                         </div>
+                    </div>
+                    <div className="group my-10 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md">
+                        <a className="relative flex h-60 overflow-hidden" href="#">
+                            <img
+                                className=" object-fit  object-center w-full h-full"
+                                src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
+                                alt="product image"
+                            />
 
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/423x263"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    The 400 Blows
-                                </h2>
-                                <p className="mt-1">$18.40</p>
+                            <div className="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
+                                <button className="flex h-10 w-10 items-center rounded-full justify-center bg-green-900 text-white transition hover:bg-green-700">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-5 w-5"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
                             </div>
+                        </a>
+                        <div className="mt-4 px-5 pb-5">
+                            <a href="#">
+                                <h5 className="text-xl tracking-tight text-slate-900 hover:text-blue-500">
+                                    Lululemon Comfort Tee - White
+                                </h5>
+                            </a>
+                            <div className="mt-2 mb-5 flex items-center justify-between">
+                                <p>
+                                    <span className="text-xl font-bold text-slate-900">$79</span>
+                                    <span className="text-sm text-slate-900 line-through">$99</span>
+                                </p>
+                            </div>
+                            <button className="flex items-center justify-center rounded-xl bg-green-700 px-4 py-3 font-bold font-400 text-sm text-white transition  hover:bg-green-500">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="mr-2 h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                </svg>
+                                Add to cart
+                            </button>
                         </div>
-                        {/* <div className="relative w-full  flex   gap-4 py-6 px-6 ">
-              <img className="h-48 aspect-video-[41/12] rounded-sm object-cover object-center dark:bg-gray-500" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/1548919db25118af.jpg?q=20" alt="Image 1" />
-              <img className="h-48 aspect-video-[41/12] rounded-sm object-cover object-center dark:bg-gray-500" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/7ad35f2c891cc54a.jpg?q=20" alt="Image 2" />
-              <img className="h-48 aspect-video-[41/12] rounded-sm object-cover object-center dark:bg-gray-500" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/a67504e9f7c88b1f.jpg?q=20" alt="Image 3" />
-              <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://source.unsplash.com/random/241x361/?4" alt="Image 4" />
-              {/* <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://source.unsplash.com/random/241x361/?5" alt="Image 5" />  */}
-                        {/* </div>  */}
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/424x264"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    The Catalyzer
-                                </h2>
-                                <p className="mt-1">$16.00</p>
+                    </div>
+                    <div className="group my-10 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md">
+                        <a className="relative flex h-60 overflow-hidden" href="#">
+                            <img
+                                className=" object-fit  object-center w-full h-full"
+                                src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
+                                alt="product image"
+                            />
+
+                            <div className="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
+                                <button className="flex h-10 w-10 items-center rounded-full justify-center bg-green-900 text-white transition hover:bg-green-700">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-5 w-5"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
                             </div>
+                        </a>
+                        <div className="mt-4 px-5 pb-5">
+                            <a href="#">
+                                <h5 className="text-xl tracking-tight text-slate-900 hover:text-blue-500">
+                                    Lululemon Comfort Tee - White
+                                </h5>
+                            </a>
+                            <div className="mt-2 mb-5 flex items-center justify-between">
+                                <p>
+                                    <span className="text-xl font-bold text-slate-900">$79</span>
+                                    <span className="text-sm text-slate-900 line-through">$99</span>
+                                </p>
+                            </div>
+                            <button className="flex items-center justify-center rounded-xl bg-green-700 px-4 py-3 font-bold font-400 text-sm text-white transition  hover:bg-green-500">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="mr-2 h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                </svg>
+                                Add to cart
+                            </button>
                         </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/425x265"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    Shooting Stars
-                                </h2>
-                                <p className="mt-1">$21.15</p>
+                    </div>
+                    <div className="group my-10 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md">
+                        <a className="relative flex h-60 overflow-hidden" href="#">
+                            <img
+                                className=" object-fit  object-center w-full h-full"
+                                src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
+                                alt="product image"
+                            />
+
+                            <div className="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
+                                <button className="flex h-10 w-10 items-center rounded-full justify-center bg-green-900 text-white transition hover:bg-green-700">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-5 w-5"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                </button>
                             </div>
-                        </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/427x267"
-                                />
+                        </a>
+                        <div className="mt-4 px-5 pb-5">
+                            <a href="#">
+                                <h5 className="text-xl tracking-tight text-slate-900 hover:text-blue-500">
+                                    Lululemon Comfort Tee - White
+                                </h5>
                             </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    Neptune
-                                </h2>
-                                <p className="mt-1">$12.00</p>
+                            <div className="mt-2 mb-5 flex items-center justify-between">
+                                <p>
+                                    <span className="text-xl font-bold text-slate-900">$79</span>
+                                    <span className="text-sm text-slate-900 line-through">$99</span>
+                                </p>
                             </div>
-                        </div>
-                        <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-                            <a className="block relative h-48 rounded overflow-hidden">
-                                <img
-                                    alt="ecommerce"
-                                    className="object-cover object-center w-full h-full block"
-                                    src="https://dummyimage.com/428x268"
-                                />
-                            </a>
-                            <div className="mt-4">
-                                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                                    CATEGORY
-                                </h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium">
-                                    The 400 Blows
-                                </h2>
-                                <p className="mt-1">$18.40</p>
-                            </div>
+                            <button className="flex items-center justify-center rounded-xl bg-green-700 px-4 py-3 font-bold font-400 text-sm text-white transition  hover:bg-green-500">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="mr-2 h-5 w-5"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                >
+                                    <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                </svg>
+                                Add to cart
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -185,3 +233,10 @@ const Product: React.FC<ProductType> = ({ name = "mayank", image = [{ url: "data
     )
 }
 export default Product
+{/* <div className="relative w-full  flex   gap-4 py-6 px-6 ">
+              <img className="h-48 aspect-video-[41/12] rounded-sm object-cover object-center dark:bg-gray-500" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/1548919db25118af.jpg?q=20" alt="Image 1" />
+              <img className="h-48 aspect-video-[41/12] rounded-sm object-cover object-center dark:bg-gray-500" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/7ad35f2c891cc54a.jpg?q=20" alt="Image 2" />
+              <img className="h-48 aspect-video-[41/12] rounded-sm object-cover object-center dark:bg-gray-500" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/a67504e9f7c88b1f.jpg?q=20" alt="Image 3" />
+              <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://source.unsplash.com/random/241x361/?4" alt="Image 4" />
+              {/* <img className="h-48 aspect-video rounded-sm object-cover object-center dark:bg-gray-500" src="https://source.unsplash.com/random/241x361/?5" alt="Image 5" />  */}
+{/* </div>  */ }

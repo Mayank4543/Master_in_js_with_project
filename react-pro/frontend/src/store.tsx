@@ -1,4 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
+import { compositeWithDevTools } from " redux-devtools-extension";
 import thunk from "redux-thunk";
 
 // Your reducers will go into combineReducers

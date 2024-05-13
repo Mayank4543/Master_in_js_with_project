@@ -1,57 +1,57 @@
-// let z = [1, 2, 3, 4, 5];
-// let name = { age: "23" };
-// console.log(...z);
+// // let z = [1, 2, 3, 4, 5];
+// // let name = { age: "23" };
+// // console.log(...z);
 
-// 3
-console.log(typeof NaN);
-// 6
-let d = 20 - -30;
-console.log(d);
+// // 3
+// console.log(typeof NaN);
+// // 6
+// let d = 20 - -30;
+// console.log(d);
 
-// 8
-let data = { name: "test", age: 23 };
-console.log(delete data.age, data.name);
-console.log(data);
+// // 8
+// let data = { name: "test", age: 23 };
+// console.log(delete data.age, data.name);
+// console.log(data);
 
-// 7
-const setr = new Set([1, 2, 4, 5, 6, 1]);
-console.log(setr);
-// // 11 with  out dot operator calling key and value
-const dara = {
-  name: "dara",
-  age: "12",
-  course: "BCA",
-};
-const { age } = dara;
-console.warn(age);
-// 14
-// let data1 = { name: "dara", age: "12", course: "BCA" };
-// let info = { city: "dara", age: "12", course: "Bcom" };
-// data1 = { ...info, ...data1 };
-// console.log(data1);
-// 16
+// // 7
+// const setr = new Set([1, 2, 4, 5, 6, 1]);
+// console.log(setr);
+// // // 11 with  out dot operator calling key and value
+// const dara = {
+//   name: "dara",
+//   age: "12",
+//   course: "BCA",
+// };
+// const { age } = dara;
+// console.warn(age);
+// // 14
+let data1 = { name: "dara", age: "18", course: "BCA" };
+let info = { city: "dara", age: "12", course: "Bcom" };
+data1 = { ...info, ...data1 };
+console.log(data1);
+// // 16
 // const result1 = false || {} || null;
 // console.log(result1);
-// 17
+// // 17
 // const result = false || null || "";
 // console.log(result);
-// 21
-// json.parse();
-// what this method will do
-// ans parses jason to a javascript value
-//  let scope only on block level  inside the function
-// 26
-// const name = "code generation";
-// console.log(!typeof name === "string");
-// console.log(!typeof name === "object");
-// output false  false
-let person = { name: "anil" };
-person.age = 12;
-Object.seal(person);
-person.name = "mayank";
-// //  we cannot modify the object but we can modify only key  and value which arre present in the object not add to the new  key value pair
+// 21;
+// // json.parse();
+// // what this method will do
+// // ans parses jason to a javascript value
+// //  let scope only on block level  inside the function
+// 26;
+// const name1 = "code generation";
+// console.log(!typeof name1 === "string");
+// console.log(!typeof name1 === "object");
+// // output false  false
+// let person = { name: "anil" };
+// person.age = 12;
+// Object.seal(person);
+// person.name = "mayank";
+// // //  we cannot modify the object but we can modify only key  and value which arre present in the object not add to the new  key value pair
 
-console.log(person);
+// console.log(person);
 // 31
 // let a = 39;
 // console.log(a % 2);
@@ -63,9 +63,9 @@ console.log(person);
 //  map humesha kuch na kuch return karta hain
 //   lekin foreach nhi karta hain return
 // 35
-// let data3 = ["anil", "radha", "peter"];
-// delete data3["anil"];
-// console.log(data3);
+let data3 = ["anil", "radha", "peter"];
+delete data3["anil"];
+console.log(data3);
 // output[("anil", "radha", "peter")];
 // let data = ["anil", "radha", "peter"];
 // delete data[1];

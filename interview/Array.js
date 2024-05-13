@@ -150,3 +150,87 @@ function union(arr1, arr2) {
 }
 
 console.log(union([1, 2, 3, 4], [2, 4, 6, 6666]));
+
+function findDuplicates(arr) {
+  let occurance = {};
+  let duplicate = [];
+  for (let i = 0; i < arr.length; i++) {
+    let currentelemt = arr[i];
+    if (occurance[currentelemt] === undefined) {
+      occurance[currentelemt] = 1;
+    } else {
+      duplicate.push(currentelemt);
+      occurance[currentelemt]++;
+    }
+  }
+  return duplicate;
+}
+const arr1 = [2, 1, 3, 7, 4, 5, 9, 6, 2, 3, 1, 7, 6, 19, 8];
+const duplicateValues = findDuplicates(arr1);
+console.log("Duplicate values in the array:", duplicateValues);
+const uniqueDuplicateValues = [...new Set(duplicateValues)];
+console.log("Unique duplicate values in the array:", uniqueDuplicateValues);
+
+function createPyramid(rows) {
+  let pyramid = "";
+  for (let i = 1; i <= rows; i++) {
+    // Add spaces before the asterisks
+    for (let j = 1; j <= rows - i; j++) {
+      pyramid += " ";
+    }
+    // Add asterisks for each row
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      pyramid += "*";
+    }
+    // Move to the next line after completing a row
+    pyramid += "\n";
+  }
+  return pyramid;
+}
+
+console.log(createPyramid(5));
+function duplicates(arr) {
+  const occurance = {};
+  const dupllicate = [];
+  for (let i = 0; i < arr.length; i++) {
+    let cuurentelement = arr[i];
+    if (occurance[cuurentelement] === undefined) {
+      occurance[cuurentelement] = 1;
+    } else {
+    }
+  }
+}
+
+let arr2 = [2, 1, 3, 7, 4, 5, 9, 6, 2, 3, 1, 7, 6, 19, 8, 7];
+let duplicate2 = [];
+for (let i = 0; i < arr2.length; i++) {
+  for (let j = i + 1; j < arr2.length; j++) {
+    if (arr2[i] === arr2[j]) {
+      let duplicate = false;
+      for (let k = 0; k < arr2.length; k++) {
+        if (duplicate[k] === arr2[i]) {
+          duplicate = true;
+          break;
+        }
+      }
+      if (!duplicate) {
+        duplicate2.push(arr2[i]);
+      }
+      break;
+    }
+  }
+}
+console.log("duplca:", duplicate2);
+function createpyrmid(row) {
+  let pyrmid = "";
+  for (let i = 1; i <= row; i++) {
+    for (let j = 1; j <= row - i; j++) {
+      pyrmid += " ";
+    }
+    for (let k = 1; k <= 2 * i - 1; k++) {
+      pyrmid += "*";
+    }
+    pyrmid += "\n";
+  }
+}
+createpyrmid(5);
