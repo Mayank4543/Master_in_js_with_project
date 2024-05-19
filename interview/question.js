@@ -13,4 +13,9 @@ function sumofelemnt(num) {
   }
   console.log(sum);
 }
-sumofelemnt(6);
+// sumofelemnt(6);
+let arr11 = [12, 1, 5, 44, 34];
+function findMaxNumber(arr) {
+  return Math.max(...arr);
+}
+console.log(findMaxNumber(arr11));
