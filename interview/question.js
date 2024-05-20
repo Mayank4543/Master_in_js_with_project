@@ -19,3 +19,7 @@ function findMaxNumber(arr) {
   return Math.max(...arr);
 }
 console.log(findMaxNumber(arr11));
+var str3 = "Hello Mayank";
+// const reverseString = (str3) => str3.split(”).reverse().join(”);
+const reverseString = (str3) => str3.split("").reverse().join("");
+console.log(reverseString(str3));
