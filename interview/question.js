@@ -23,3 +23,16 @@ var str3 = "Hello Mayank";
 // const reverseString = (str3) => str3.split(”).reverse().join(”);
 const reverseString = (str3) => str3.split("").reverse().join("");
 console.log(reverseString(str3));
+function findLargestElement(nestedArray) {
+  let largest = nestedArray[0][0];
+
+  for (let arr of nestedArray) {
+    for (let num of arr) {
+      if (num > largest) {
+        largest = num;
+      }
+    }
+  }
+
+  return largest;
+}
