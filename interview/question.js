@@ -61,3 +61,9 @@ function fibonacciSequence(numTerms) {
   return sequence;
 }
 console.log(fibonacciSequence(10));
+function factorial(num) {
+  if (num <= 1) return 1;
+
+  return num * factorial(num - 1);
+}
+console.log(factorial(5));
