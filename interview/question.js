@@ -67,4 +67,14 @@ function factorial(num) {
   return num * factorial(num - 1);
 }
 console.log(factorial(5));
-// now i want
+// now i want to cont the occurance of each correct string
+function countCharacterOccurrences(str) {
+  const charCount = {};
+
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  return charCount;
+}
+console.log(countCharacterOccurrences("Myank"));
