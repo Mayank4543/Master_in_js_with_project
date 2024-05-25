@@ -78,3 +78,8 @@ function countCharacterOccurrences(str) {
   return charCount;
 }
 console.log(countCharacterOccurrences("Myank"));
+// function toTitleCase(str) {
+
+//   return str.replace(/\b\w/g, l => l.toUpperCase());
+
+// }
