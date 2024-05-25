@@ -83,3 +83,6 @@ console.log(countCharacterOccurrences("Myank"));
 //   return str.replace(/\b\w/g, l => l.toUpperCase());
 
 // }
+let str6 = "mayankrathore";
+let capitalizedStr = str6.charAt(0).toUpperCase() + str6.slice(1);
+console.log(capitalizedStr);
