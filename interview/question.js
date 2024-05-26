@@ -86,3 +86,13 @@ console.log(countCharacterOccurrences("Myank"));
 let str6 = "mayankrathore";
 let capitalizedStr = str6.charAt(0).toUpperCase() + str6.slice(1);
 console.log(capitalizedStr);
+//  to check wheather string is pallindrome or 
+function isPalindrome(str) { 
+
+  const cleanStr = str.replace(/[^a-zA-Z0-9]/g, ”).toLowerCase(); 
+
+  const reversedStr = cleanStr.split(”).reverse().join(”); 
+
+  return cleanStr === reversedStr; 
+
+} 
