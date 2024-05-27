@@ -1,3 +1,1 @@
-let data3 = ["anil", "radha", "peter"];
-delete data3["anil"];
-console.log(data3);
+console.log(solution.romanToInt("LVIII"))
