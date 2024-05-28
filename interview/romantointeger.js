@@ -12,11 +12,11 @@ class Solution {
 
     let total = 0;
     const n = s.length;
-    // console.log(n);
+    console.log(n);
 
     for (let i = 0; i < n; i++) {
       // If the current numeral is less than the next numeral, subtract its value
-      console.log(roman[s[i]]);
+      //   console.log(roman[s[i]]);
       if (i < n - 1 && roman[s[i]] < roman[s[i + 1]]) {
         total -= roman[s[i]];
       } else {
@@ -32,4 +32,4 @@ class Solution {
 // Example usage:
 const solution = new Solution();
 // console.log(solution.romanToInt("III")); // Output: 3
-console.log(solution.romanToInt("LVIII")); // Output:58
+console.log(solution.romanToInt("C")); // Output:58
