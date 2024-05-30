@@ -4,6 +4,7 @@ function maxim(height) {
   var maxarea = 0;
   while (left < right) {
     var currheight = Math.min(height[left], height[right]);
+    // console.log(currheight);            `
     var currentwidth = right - left;
     var currentarea = currentwidth * currheight;
     maxarea = Math.max(maxarea, currentarea);
