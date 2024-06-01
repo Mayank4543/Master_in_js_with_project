@@ -16,5 +16,5 @@ function maxim(height) {
   }
   return maxarea;
 }
-var height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+var height = [1, 8, 6, 2, 5, 4, 8, 3, 7, 9, 1];
 console.log(maxim(height));
