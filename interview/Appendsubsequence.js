@@ -11,6 +11,6 @@ function subsequnce(s, t) {
   }
   return t.length - j;
 }
-const str1 = "coaching  ";
+const str1 = "coaching ";
 const str2 = "coding";
 console.log(subsequnce(str1, str2));
