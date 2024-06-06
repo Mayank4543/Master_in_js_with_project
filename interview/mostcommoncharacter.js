@@ -34,7 +34,7 @@ class Solution {
   }
 }
 
-// Usage example:
+// Usage example::::
 let solution = new Solution();
 let words = ["bella", "label", "roller"];
 console.log(solution.commonChars(words)); // Output: ["e", "l", "l"]
