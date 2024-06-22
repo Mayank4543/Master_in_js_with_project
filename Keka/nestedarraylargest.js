@@ -18,3 +18,12 @@ let nestedArray = [
 console.log(findlargetsnested(nestedArray));
 let result = fibonacciSequence(7);
 console.log(result);
+function isPalindrome(str) { 
+
+  const cleanStr = str.replace(/[^a-zA-Z0-9]/g, ”).toLowerCase(); 
+
+  const reversedStr = cleanStr.split(”).reverse().join(”); 
+
+  return cleanStr === reversedStr; 
+
+} 
