@@ -11,6 +11,12 @@ form.addEventListener('submit',(e)=>{
   }else{
     const bmi = (weight / ((height * height) / 10000)).toFixed(2);
     //show the result
-    result.innerHTML = `<span>${bmi}</span>`;
+    if(bmi<18.6){
+        result.innerHTML=`Your BMI is underweight ${bmi} `
+    }else if(18.6<bmi<24.9){
+          result.innerHTML=`Your BMI is Normal range ${bmi}`
+    }else{
+        result.innerHTML=`Your BMI is overweight ${bmi} `
+    }
   }
 })
