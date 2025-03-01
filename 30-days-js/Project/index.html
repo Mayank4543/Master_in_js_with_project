@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
+        <h1 class="text-2xl font-bold text-gray-700 mb-4">BMI Calculator</h1>
+        <form class="space-y-4">
+            <div>
+                <label class="block text-left text-gray-600 font-semibold">Height (cm)</label>
+                <input type="text" id="height" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+                <label class="block text-left text-gray-600 font-semibold">Weight (kg)</label>
+                <input type="text" id="weight" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <button type="submit" id="calculate" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Calculate</button>
+            <div class="result text-lg font-semibold text-gray-700 mt-4"></div>
+        </form>
+    </div>
+    
+
+       
+   <script src="./bmi.js"></script> 
+
+</body>
+</html>
